@@ -14,3 +14,6 @@ function enqueue_scot_custom_styles(){
         $theme->get('Version') // this only works if you have Version in the style header
     );
 }
+
+// Add theme-specific class to body
+add_filter( 'body_class', function( $classes ){ return array_merge( $classes, array( 'scot-custom-theme' ) ); } );
