@@ -17,3 +17,22 @@ function enqueue_scot_custom_styles(){
 
 // Add theme-specific class to body
 add_filter( 'body_class', function( $classes ){ return array_merge( $classes, array( 'scot-custom-theme' ) ); } );
+
+// Disable Theme Editor
+define( 'DISALLOW_FILE_EDIT', true );
+
+// Register Sidebar(s)
+add_action( 'widgets_init', 'scot_custom_sidebars' );
+function scot_custom_sidebars(){
+    register_sidebar(
+        array(
+            'id' => 'home-page-widget-area',
+            'name' => __( 'Home Page Widget Area', 'twentytwentychild' ),
+            'description' => __( 'A home page specific widget area', 'twentytwentychild' ),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => ''
+        )
+    );
+}
