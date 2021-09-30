@@ -9,4 +9,36 @@
 
 .scot-custom-theme {
 
+    &.home {
+        .wp-block-latest-posts {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            li {
+                @media screen and (min-width: 900px){
+                    flex: 0 1 40%;
+                }
+                
+                .wp-block-latest-posts__featured-image {
+                    height: 360px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow-y: hidden;
+                }
+
+                &:first-of-type {
+                    @media screen and (min-width: 900px){
+                        flex: 0 1 100%;
+                    }
+                    
+                    .wp-block-latest-posts__featured-image {
+                        height: unset;
+                    }
+                }
+            }
+        }
+
+    }
 }

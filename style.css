@@ -6,5 +6,30 @@
  Version:      1.0.0 
  Text Domain:  twentytwentychild
 */
+.scot-custom-theme.home .wp-block-latest-posts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 900px) {
+  .scot-custom-theme.home .wp-block-latest-posts li {
+    flex: 0 1 40%;
+  }
+}
+.scot-custom-theme.home .wp-block-latest-posts li .wp-block-latest-posts__featured-image {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+@media screen and (min-width: 900px) {
+  .scot-custom-theme.home .wp-block-latest-posts li:first-of-type {
+    flex: 0 1 100%;
+  }
+}
+.scot-custom-theme.home .wp-block-latest-posts li:first-of-type .wp-block-latest-posts__featured-image {
+  height: unset;
+}
 
 /*# sourceMappingURL=style.css.map */
