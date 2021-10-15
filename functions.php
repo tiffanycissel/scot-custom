@@ -36,3 +36,29 @@ function scot_custom_sidebars(){
         )
     );
 }
+
+// Create a custom sort for Board Member CPT
+add_filter( 'pre_get_posts', 'scot_board_member_custom_sort' );
+function scot_board_member_custom_sort( $query ){
+    if( $query->is_main_query() && is_post_type_archive( 'scot_board_member' ) ){
+        $meta_query_array = array(
+            'relation' => 'AND',
+            'rank_clause' => array(
+                'key' => ' scot_board_member_role'
+            ),
+            'surname_clause' => array(
+                'key' => 'scot_board_member_last_name'
+            )
+        );
+
+        $orderby_array = array(
+            'rank_clause' => 'ASC',
+            'surname_clause' => 'ASC'
+        );
+
+        $query->set( 'meta_query', $meta_query_array );
+        $query->set( 'orderby', $orderby_array );
+
+        return $query;
+    }
+}
