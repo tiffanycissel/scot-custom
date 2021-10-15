@@ -45,8 +45,12 @@ if ( is_singular() ) {
 		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
-			// echo( get_the_title() );
+			$role_info = get_field_object( 'scot_board_member_role' );
+			$role = get_field( 'scot_board_member_role' );
 			echo( '<h2 class="entry-title heading-size-1">' . get_the_title(). '</h2>' );
+			if( $role != 7 ){
+				echo( '<p class="role">'.$role_info['choices'][$role].'</p>' );
+			}
 		}
 
 		$intro_text_width = '';

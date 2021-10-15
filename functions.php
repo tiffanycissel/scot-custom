@@ -44,7 +44,7 @@ function scot_board_member_custom_sort( $query ){
         $meta_query_array = array(
             'relation' => 'AND',
             'rank_clause' => array(
-                'key' => ' scot_board_member_role'
+                'key' => 'scot_board_member_role'
             ),
             'surname_clause' => array(
                 'key' => 'scot_board_member_last_name'
