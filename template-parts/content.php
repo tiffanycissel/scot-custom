@@ -34,9 +34,37 @@
 				the_excerpt();
 			} else if ( is_singular() && is_front_page() ){
 				the_content();
+
+				$recent_posts_query_args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 4,
+					'status' => 'publish',
+				);
+
+				$recent_posts_query = new WP_Query( $recent_posts_query_args );
+
+				if( $recent_posts_query->have_posts() ): ?>
+					<div class="scot-recent-posts">
+						<h2>Happenings</h2>
+						<?php while( $recent_posts_query->have_posts() ):
+							$recent_posts_query->the_post();?>
+							<div <?php post_class( 'scot-recent-post'); ?> style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>')">
+								<div class="scot-recent-post-text">
+									<a href="#"><?php the_title(); ?></a>
+									<time><?php echo get_post_time( 'F j, Y' ); ?></time>
+								</div>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				<?php endif;
+
+				wp_reset_postdata();
+
 				if( is_active_sidebar( 'home-page-widget-area' ) ){
 					dynamic_sidebar( 'home-page-widget-area' );
 				}
+			} elseif( get_post_type() === 'scot_board_member' ) {
+				echo('board_member');
 			} else {
 				the_content( __( 'Continue reading', 'twentytwenty' ) );				
 			}
