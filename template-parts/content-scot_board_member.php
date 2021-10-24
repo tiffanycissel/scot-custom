@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * The template for displaying Board Member CPT content
  *
  * Used for both singular and index.
  *
