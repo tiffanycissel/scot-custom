@@ -49,11 +49,13 @@ get_header();
 		}
 	} elseif ( is_archive() && ! have_posts() ) {
 		$archive_title = __( 'Nothing Found', 'twentytwenty' );
-	} elseif ( ! is_home() && ! is_post_type_archive( 'scot_board_member') ) {
+	} elseif ( ! is_home() && ! is_post_type_archive( 'scot_board_member') && ! is_post_type_archive( 'scot_newsletter') ) {
 		$archive_title    = get_the_archive_title();
 		$archive_subtitle = get_the_archive_description();
 	} elseif ( is_post_type_archive( 'scot_board_member') ) {
 		$archive_title = 'SCOT Board Members';
+	} elseif ( is_post_type_archive( 'scot_newsletter') ) {
+		$archive_title = 'Great SCOT Newsletter';
 	}
 
 	if ( $archive_title || $archive_subtitle ) {
@@ -84,7 +86,7 @@ get_header();
 
 		while ( have_posts() ) {
 			$i++;
-			if ( $i > 1 && !is_post_type_archive( 'scot_board_member') ) {
+			if ( $i > 1 && ( !is_post_type_archive( 'scot_board_member') && !is_post_type_archive( 'scot_newsletter') ) ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
 			}
 			the_post();

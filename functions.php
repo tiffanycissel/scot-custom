@@ -62,3 +62,13 @@ function scot_board_member_custom_sort( $query ){
         return $query;
     }
 }
+
+// Customize Newsletter CPT query
+add_filter( 'pre_get_posts', 'scot_newsletter_custom_sort' );
+function scot_newsletter_custom_sort( $query ){
+    if( $query->is_main_query() && is_post_type_archive( 'scot_newsletter' ) ){
+        $query->set( 'posts_per_page', -1 );
+
+        return $query;
+    }
+}
