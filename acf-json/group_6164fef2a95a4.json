@@ -1,0 +1,73 @@
+{
+    "key": "group_6164fef2a95a4",
+    "title": "SCOT Board Member",
+    "fields": [
+        {
+            "key": "field_6164ff01f9b9e",
+            "label": "SCOT Board Member Last Name",
+            "name": "scot_board_member_last_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6164ff5b9f89b",
+            "label": "SCOT Board Member Role",
+            "name": "scot_board_member_role",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "President",
+                "2": "Vice President",
+                "3": "Treasurer",
+                "4": "Secretary",
+                "5": "Membership Chair",
+                "6": "Webmaster",
+                "7": "Regular Board Member"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "scot_board_member"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635654931
+}

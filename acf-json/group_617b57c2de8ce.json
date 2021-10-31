@@ -1,0 +1,49 @@
+{
+    "key": "group_617b57c2de8ce",
+    "title": "Add Post Archive Link",
+    "fields": [
+        {
+            "key": "field_617b57e246fbd",
+            "label": "Post Type Archive",
+            "name": "post_type_archive",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Posts",
+                "scot_board_member": "SCOT Board Members",
+                "scot_newsletter": "SCOT Newsletter Articles"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template-parent-landing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635654900
+}
