@@ -35,7 +35,6 @@
                 background-repeat: no-repeat;
             }
         }
-
     }
 
     header {
@@ -47,56 +46,131 @@
            > div {              
                max-width: unset;           
 
-            &.header-titles-wrapper {
-                background-image: url('assets/0618181836_c-edits_v2_medium_400.jpg');
-                background-repeat: no-repeat;
+                &.header-titles-wrapper {
+                    background-image: url('assets/0618181836_c-edits_v2_medium_400.jpg');
+                    background-repeat: no-repeat;
+                    flex: 1 0 100%;
+                    margin-right: 0;
+                    padding: 5rem 0;
 
-                flex: 1 0 100%;
-                margin-right: 0;
-                padding: 5rem 0;
+                    button.toggle {
+                        .toggle-icon {
+                            svg {
+                                color: rgba(255,255,255,.75);
+                            }
+                        }
+                        .toggle-text {
+                            color: rgba(255,255,255,.75);
+                        }
+                    }
 
-                .header-titles {
-                    justify-content: center;
-                    margin: unset;
+                    .header-titles {
+                        justify-content: center;
+                        margin: unset;
+                        margin: 0 7.5rem; 
 
-                    div {
-                        margin-top: 0;
-                        margin-left: 0;
-
-                        &:first-child {
-                            flex: 1 0 100%;
+                        @media screen and ( min-width: 700px ) {
+                            margin: 0 calc((100vw - 440px) / 2);
                         }
 
-                        &.site-description {
-                            color: white;
-                            font-family: Georgia, 'Times New Roman', Times, serif;
-                            padding-top: 1.5rem;
+                        @media screen and ( min-width: 1000px ) {
+                            margin: 0;
                         }
 
-                        a {
-                            text-align: center;
+                        div {
+                            margin-top: 0;
+                            margin-left: 0;
 
-                            &:last-of-type {
-                                font-family: 'sherwood', serif;
-                                font-size: 3.6rem;
-                                color: white;
-                                font-weight: 400;
+                            &:first-child {
+                                flex: 1 0 100%;
+                            }
 
-                                &:hover {
-                                    text-decoration: none;
+                            &.site-title {
+                                a {
+                                    text-align: center;
+    
+                                    &:last-of-type {
+                                        font-family: 'sherwood', serif;                                        
+                                        color: white;
+                                        font-weight: 400;
+                                        font-size: 2.5rem;
+                                        padding-top: 1.5rem;
+
+                                        @media screen and (min-width: 700px) {
+                                            font-size: 2.75rem;
+                                        }
+
+                                        @media screen and (min-width: 1000px) {
+                                            font-size: 3.6rem;
+                                        }
+    
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                    }
                                 }
                             }
+
+                            &.site-description {
+                                color: white;
+                                font-family: Georgia, 'Times New Roman', Times, serif;
+                                padding-top: 1.5rem;
+                            }
+
+                        }
+                    }
+                }
+        
+                &.header-navigation-wrapper {
+                    width: calc(100vw - 8rem);
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    .primary-menu-wrapper {
+                        .primary-menu {
+                            justify-content: flex-start;
+    
+                            > li {
+                                > a {
+                                    color: black;
+                                }
+                                > .icon {
+                                    &::before {
+                                        color: black;
+                                    }
+                                    &::after {
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+
+                        +.header-toggles {
+                            .toggle-wrapper {
+                                &:first-child {
+                                    &::before {
+                                        background-color: unset;
+                                    }
+                                }
+                            }
+                        }
+                    }                    
+                }
+            }
+        }        
+    }
+
+    .menu-modal {
+        .mobile-menu {
+            .modal-menu {
+                > li {
+                    .ancestor-wrapper {
+                        > a {
+                            color: black;
                         }
                     }
                 }
             }
-    
-            &.header-navigation-wrapper {
-                width: calc(100vw - 8rem);
-                margin-left: auto;
-                margin-right: auto;
-            }
-            }
-        }        
+        }
     }
 }
