@@ -134,3 +134,39 @@ function scotcustom_site_logo( $output = 'standard', $args = array(), $echo = tr
 	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
+
+/**
+ * Custom theme support for Scot Custom theme based on parent theme
+ * 
+ * See themes\twentytwenty\functions.php:36
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ *
+ * @since Twenty Twenty 1.0
+ */
+function scot_custom_theme_support() {
+    remove_theme_support( 'custom-logo' );
+
+    // Custom logo.
+	$logo_width  = 300;
+	$logo_height = 84;
+    
+    // If the retina setting is active, double the recommended width and height.
+	if ( get_theme_mod( 'retina_logo', false ) ) {
+		$logo_width  = floor( $logo_width * 2 );
+		$logo_height = floor( $logo_height * 2 );
+	}
+
+    add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => $logo_height,
+			'width'       => $logo_width,
+			'flex-height' => true,
+			'flex-width'  => true,
+		)
+	);    
+}
+add_action( 'after_setup_theme', 'scot_custom_theme_support', 11 );
