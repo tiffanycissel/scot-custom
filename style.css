@@ -22,5 +22,53 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+.scot-custom-theme header .header-inner.section-inner {
+  flex-flow: row wrap;
+  width: 100%;
+  padding: 0;
+}
+.scot-custom-theme header .header-inner.section-inner > div {
+  max-width: unset;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper {
+  background-image: url("assets/0618181836_c-edits_v2_medium_400.jpg");
+  background-repeat: no-repeat;
+  flex: 1 0 100%;
+  margin-right: 0;
+  padding: 5rem 0;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles {
+  justify-content: center;
+  margin: unset;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div {
+  margin-top: 0;
+  margin-left: 0;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div:first-child {
+  flex: 1 0 100%;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div.site-description {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 1.5rem;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div a {
+  text-align: center;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div a:last-of-type {
+  font-family: "sherwood", serif;
+  font-size: 3.6rem;
+  color: white;
+  font-weight: 400;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-titles-wrapper .header-titles div a:last-of-type:hover {
+  text-decoration: none;
+}
+.scot-custom-theme header .header-inner.section-inner > div.header-navigation-wrapper {
+  width: calc(100vw - 8rem);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /*# sourceMappingURL=style.css.map */
